@@ -98,7 +98,7 @@
 		        </configuration>
 			</plugin>
 
-		    <!-- Allows to build and executable jar which can be run with the command 'java -jar ChimeraCamelJava-executable.jar' -->
+		    <!-- Allows to build and executable jar which can be run with the command 'java -jar [jar executable file name]' -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-shade-plugin</artifactId>
