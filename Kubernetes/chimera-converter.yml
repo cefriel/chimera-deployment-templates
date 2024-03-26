@@ -1,50 +1,50 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chimera-example
+  name: <kubernetes service name>
   labels:
-    app: chimera-converter
-    chimera-infra: chimera-example-service
+    app: <name of application this service belongs to>
+    chimera-infra: <custom label>
 spec:
   ports:
-  - name: chimera-example-service
-    port: 8888
+  - name: <name of exposed port>
+    port: <port number of service inside the cluster>
     protocol: TCP
-    targetPort: 8888
-    nodePort: 30042
+    targetPort: <port number of backend pods>
+    nodePort: <port exposed by each cluster>
   selector:
-    chimera-infra: chimera-example-pod
+    chimera-infra: <custom label>
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chimera-example
+  name: <name of deployment>
   labels:
-    app: chimera-converter
-    chimera-infra: chimera-example-deployment
+    app: <name of application this deployment belongs to>
+    chimera-infra: <custom label>
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: chimera-converter
+      app: <name of application managed by deployment>
   template:
     metadata:
       labels:
-        app: chimera-converter
-        chimera-infra: chimera-example-pod
+        app: <name of application this deployment belongs to>
+        chimera-infra: <custom label>
     spec:
       containers:
-      - image: cefriel/chimera:tutorial-advanced
-        name: chimera-example
+      - image: <chimera project image>
+        name: <chimera project container name>
         ports:
-        - containerPort: 8888
+        - containerPort: <container port exposed by container>
         resources:
           requests:
-            memory: "200Mi"
-            cpu: "0.2"
+            memory: <min memory necessary>
+            cpu: <min cpu necessary>
           limits:
-            memory: "2Gi"
-            cpu: "4"
+            memory: <max memory limit>
+            cpu: <max cpu limit>
