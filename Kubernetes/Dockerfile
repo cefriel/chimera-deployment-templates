@@ -1,9 +1,9 @@
-FROM cefriel/chimera:tutorial
+FROM eclipse-temurin:17
 
 WORKDIR /home/
-COPY camel-context.xml /home/routes/camel-context.xml
+COPY <chimera project jar> /home/<chimera project jar>
 
-EXPOSE 8888
+EXPOSE <port>
 
-ENTRYPOINT ["java","-Xmx4g","-jar","/home/chimera-tutorial.jar"]
+ENTRYPOINT ["java","-Xmx4g","-jar","/home/<chimera project jar>"]
 
