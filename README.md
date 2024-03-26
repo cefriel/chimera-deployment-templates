@@ -1,4 +1,4 @@
-# Chimera deployment templates
+# Chimera Deployment Templates
 
 This repository contains examples of how a chimera pipeline using [Apache Camel](https://camel.apache.org/) can be deployed in several ways.
 The different deployment options are:
