@@ -5,7 +5,7 @@ services:
         image: cefriel/smartedge:native
         build:
             context: ../
-            dockerfile: ./SmartEdge-Native/Dockerfile
+            dockerfile: ./Dockerfile
         volumes:
               - ./appFolder:/home/appFolder
               - ./outbox:/home/out

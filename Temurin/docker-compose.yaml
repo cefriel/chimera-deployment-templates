@@ -5,7 +5,7 @@ services:
         image: cefriel/smartedge:temurin-17
         build:
             context: ../
-            dockerfile: ./SmartEdge-Temurin/Dockerfile
+            dockerfile: ./Dockerfile
         volumes:
               - ./appFolder:/home/appFolder
               - ./outbox:/home/out

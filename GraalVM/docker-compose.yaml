@@ -5,7 +5,7 @@ services:
         image: cefriel/smartedge:graalvm-17
         build:
             context: ../
-            dockerfile: ./SmartEdge-GraalVm/Dockerfile
+            dockerfile: ./Dockerfile
         volumes:
               - ./appFolder:/home/appFolder
               - ./outbox:/home/out
