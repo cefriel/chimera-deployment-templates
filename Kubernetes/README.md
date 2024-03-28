@@ -1,6 +1,6 @@
 # Running a Chimera project on Kubernetes
 
-The docker image of the chimera project to be used can be specified in the [chimera-converter.yml](./chimera-converter.yml) (exposed port, resources needed/limits, Docker image, labels, etc.). The file creates a Deployment using the converter image for the Pod, and a related Service. We mark the sections of the [Dockerfile](./Dockerfile) and [chimera-converter.yml](./chimera-converter.yml) that require customization with actual project-specific values using the <...> notation.
+The docker image of the chimera project to be used can be specified in the [chimera-converter.yml](./chimera-converter.yml) (exposed port, resources needed/limits, Docker image, labels, etc.). The file creates a Deployment using the converter image for the Pod, and a related Service. We mark the sections of the [Dockerfile](./Dockerfile) and [chimera-converter.yml](./chimera-converter.yml) that require customization with actual project-specific values using the <...> notation. An example of a runnable chimera-converter.yaml kubernetes descriptor is provided [here](./example/chimera-converter.yml).
 ```
 kubectl apply -f chimera-converter.yml
 ```
