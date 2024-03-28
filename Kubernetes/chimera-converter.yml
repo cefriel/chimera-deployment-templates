@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: <kubernetes service name>
+  labels:
+    app: <name of application this service belongs to>
+    chimera-infra: <custom label>
+spec:
+  ports:
+  - name: <name of exposed port>
+    port: <port number of service inside the cluster>
+    protocol: TCP
+    targetPort: <port number of backend pods>
+    nodePort: <port exposed by each cluster>
+  selector:
+    chimera-infra: <custom label>
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <name of deployment>
+  labels:
+    app: <name of application this deployment belongs to>
+    chimera-infra: <custom label>
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: <name of application managed by deployment>
+  template:
+    metadata:
+      labels:
+        app: <name of application this deployment belongs to>
+        chimera-infra: <custom label>
+    spec:
+      containers:
+      - image: <chimera project image>
+        name: <chimera project container name>
+        ports:
+        - containerPort: <container port exposed by container>
+        resources:
+          requests:
+            memory: <min memory necessary>
+            cpu: <min cpu necessary>
+          limits:
+            memory: <max memory limit>
+            cpu: <max cpu limit>

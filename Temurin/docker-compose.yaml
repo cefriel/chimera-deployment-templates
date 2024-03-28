@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+    chimera:
+        image: cefriel/smartedge:temurin-17
+        build:
+            context: ../
+            dockerfile: ./Dockerfile
+        volumes:
+              - ./appFolder:/home/appFolder
+              - ./outbox:/home/out
+        environment:
+              - TZ=Europe/Rome
