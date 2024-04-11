@@ -1,7 +1,7 @@
 FROM cefriel/native-builder:v17 as builder
 
 WORKDIR /
-COPY ./<Folder containing the project source files> /app/sourceFiles
+COPY ./minimal-chimera-app /app/sourceFiles
 
 WORKDIR /app/sourceFiles
 RUN mvn -Pnative -Dagent=false -DskipTests package
@@ -12,10 +12,12 @@ WORKDIR /home
 
 RUN apk update && apk add procps && apk add gcompat
 
-COPY ./SmartEdge-Native/commands.sh /home/commands.sh
+COPY ./GraalVm-Native/commands.sh /home/commands.sh
 RUN chmod +x /home/commands.sh
 
-COPY --from=builder /app/sourceFiles/target/<Native file to run> /home/<Native file to run>
-RUN chmod +x /home/chimera-camel-core
+COPY --from=builder /app/sourceFiles/target/native-minimal-chimera /home/native-minimal-chimera
+COPY --from=builder /app/sourceFiles/data /home/data
+
+RUN chmod +x /home/native-minimal-chimera
 
 ENTRYPOINT ["/home/commands.sh"]
