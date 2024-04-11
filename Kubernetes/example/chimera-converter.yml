@@ -37,7 +37,7 @@ spec:
         chimera-infra: chimera-example-pod
     spec:
       containers:
-      - image: cefriel/minimal-chimera:1.0.0
+      - image: cefriel/chimera:minimal
         name: chimera-example
         ports:
         - containerPort: 8888
