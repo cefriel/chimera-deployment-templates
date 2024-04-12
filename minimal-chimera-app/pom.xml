@@ -63,17 +63,23 @@
 			<groupId>com.cefriel</groupId>
 			<artifactId>camel-chimera-mapping-template</artifactId>
 	    </dependency>
-
+	    <dependency>
+		  <groupId>org.eclipse.rdf4j</groupId>
+		  <artifactId>rdf4j-storage</artifactId>
+		  <type>pom</type>
+		</dependency>
+		
 		<!-- Enamble usage of camel log component-->
 		<dependency>
 		    <groupId>org.apache.camel</groupId>
 		    <artifactId>camel-log</artifactId>
 		</dependency>
+		<!--Add this dependency if you want to use the camel bom 4.x.x	
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		    <version>2.0.12</version>
-		</dependency>			
+		</dependency>-->			
 	</dependencies>
 	
 	<build>

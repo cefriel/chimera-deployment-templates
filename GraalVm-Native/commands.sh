@@ -6,6 +6,7 @@ sleep 3
 #Run native app
 /home/native-minimal-chimera &
 
+mkdir -p /home/out/
 
 # Log header to CSV file
 echo "Timestamp,MemoryUsage(MB),CPUUsage" > /home/out/stats.txt
