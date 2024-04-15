@@ -1,0 +1,17 @@
+FROM ghcr.io/graalvm/native-image-community:17
+
+WORKDIR /usr/local
+
+# Retrieve Maven
+RUN curl -L https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -o maven.tar.gz
+
+# Install gzip
+RUN microdnf install -y gzip
+
+#Untar Maven package
+RUN tar -xzf maven.tar.gz -C /usr/local
+
+# Install Maven
+RUN ln -s /usr/local/apache-maven-3.9.6/bin/mvn /usr/local/bin/mvn
+ENV MAVEN_HOME /usr/local/apache-maven-3.9.6
+ENV PATH ${MAVEN_HOME}/bin:${PATH}

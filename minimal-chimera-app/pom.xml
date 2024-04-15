@@ -1,0 +1,229 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+  
+	<groupId>com.cefriel</groupId>
+  	<artifactId>minimal-chimera-2</artifactId>
+  	<version>0.0.2</version>
+  	<name>minima-chimera</name>
+  	<description>Simple java camel pipeline which implemetns harmonization using chimera</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>		
+		<chimera.version>4.0.1</chimera.version>
+		<mainClass>com.cefriel.App</mainClass>	
+		<imageName>native-minimal-chimera</imageName>
+	</properties>
+	
+ 	<dependencyManagement>
+		<dependencies>		
+  			<!-- Camel BOM -->
+	  		<dependency>
+			    <groupId>org.apache.camel</groupId>
+			    <artifactId>camel-bom</artifactId>
+			    <version>3.22.1</version>
+			    <scope>import</scope>
+			    <type>pom</type>
+			</dependency>	
+			<dependency>
+				<groupId>com.cefriel</groupId>
+				<artifactId>chimera</artifactId>
+				<version>${chimera.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>  
+    	</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+	    </dependency>
+	    
+     	<!-- Enabling usage of camel-main to bootstrap camel -->
+    	<dependency>
+			<groupId>org.apache.camel</groupId>
+      		<artifactId>camel-main</artifactId>
+    	</dependency>
+ 
+		<!-- Enabling usage of camel http component-->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+		</dependency>  
+		
+		
+		<!-- Enamble usage of chimera-->
+	    <dependency>
+			<groupId>com.cefriel</groupId>
+			<artifactId>camel-chimera-graph</artifactId>			
+	    </dependency>	
+	    <dependency>
+			<groupId>com.cefriel</groupId>
+			<artifactId>camel-chimera-mapping-template</artifactId>
+	    </dependency>
+	    <dependency>
+		  <groupId>org.eclipse.rdf4j</groupId>
+		  <artifactId>rdf4j-storage</artifactId>
+		  <type>pom</type>
+		</dependency>
+		
+		<!-- Enamble usage of camel log component-->
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-log</artifactId>
+		</dependency>
+		<!--Add this dependency if you want to use the camel bom 4.x.x	
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>2.0.12</version>
+		</dependency>-->			
+	</dependencies>
+	
+	<build>
+    	<defaultGoal>install</defaultGoal>
+    	<plugins>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.10.1</version>
+		        <configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+		      
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-resources-plugin</artifactId>
+		        <version>3.2.0</version>
+		        <configuration>
+					<encoding>UTF-8</encoding>
+		        </configuration>
+			</plugin>
+
+		    <!-- Allows to build and executable jar which can be run with the command 'java -jar ChimeraCamelJava-executable.jar' -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-shade-plugin</artifactId>
+			    <version>3.2.1</version>
+			    <executions>
+					<execution>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>shade</goal>
+			            </goals>
+			            <configuration>
+			                <shadedArtifactAttached>true</shadedArtifactAttached>
+			                <shadedClassifierName>executable-jar</shadedClassifierName>
+			                <finalName>minimal-chimera</finalName>
+			                <transformers>
+			                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+			                        <mainClass>${mainClass}</mainClass>
+			                    </transformer>
+			                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+			                        <resource>META-INF/services/org/apache/camel/TypeConverterLoader</resource>
+			                    </transformer>
+			                </transformers>
+			                <filters>
+						        <filter>
+						            <artifact>*:*</artifact>
+						            <excludes>
+						                <exclude>META-INF/*.SF</exclude>
+						                <exclude>META-INF/*.DSA</exclude>
+						                <exclude>META-INF/*.RSA</exclude>
+						            </excludes>
+						        </filter>
+						    </filters>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>  
+			<!-- 
+			   Plugin required for enabling the native image building with the command: 
+				mvn -Pnative -Dagent=false -DskipTests package 
+			-->
+			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>exec-maven-plugin</artifactId>
+			    <version>3.0.0</version>
+			    <executions>
+			        <execution>
+			            <id>java-agent</id>
+			            <goals>
+			                <goal>exec</goal>
+			            </goals>
+			            <configuration>
+			                <executable>java</executable>
+			                <workingDirectory>${project.build.directory}</workingDirectory>
+			                <arguments>
+			                    <argument>-classpath</argument>
+			                    <classpath/>
+			                    <argument>${mainClass}</argument>
+			                </arguments>
+			            </configuration>
+			        </execution>
+			        <execution>
+			            <id>native</id>
+			            <goals>
+			                <goal>exec</goal>
+			            </goals>
+			            <configuration>
+			                <executable>${project.build.directory}/${imageName}</executable>
+			                <workingDirectory>${project.build.directory}</workingDirectory>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>  
+    	</plugins>
+	</build>
+	<profiles>
+		<!--
+			Profile required for enabling the native agent for generating configuration file with the command: 
+			 mvn -Pnative -Dagent=true -DskipTests -DskipNativeBuild=true package exec:exec@java-agent 
+			NOTE:
+				The configuration files are generated within the folder target\native\agent-output\main
+				Copy all the .json files generated within the project folder resources\META-INF\native-image
+		-->
+		<profile>
+			<id>native</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+						<artifactId>native-maven-plugin</artifactId>
+						<version>0.10.0</version>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>build-native</id>
+							<goals>
+								<goal>compile-no-fork</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+						<execution>
+							<id>test-native</id>
+							<goals>
+								<goal>test</goal>
+							</goals>
+							<phase>test</phase>
+							</execution>
+						</executions>
+						<configuration>
+						    <fallback>false</fallback>
+						    <agent>
+						        <enabled>true</enabled>
+						        <defaultMode>Standard</defaultMode>
+						        <modes>
+						            <direct>config-output-dir=${project.build.directory}/native/agent-output</direct>							           							        
+						        </modes>
+						    </agent>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
