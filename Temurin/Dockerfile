@@ -1,20 +1,21 @@
-FROM maven:3.8.3-openjdk-17 as builder
+FROM cefriel/native-builder:v17 as builder
 
 WORKDIR /
 COPY ./<Folder containing the project source files> /app/sourceFiles
 
 WORKDIR /app/sourceFiles
-RUN mvn clean package
+RUN mvn -Pnative -Dagent=false -DskipTests package
 
+FROM alpine:latest
 
-FROM eclipse-temurin:17
 WORKDIR /home
 
-RUN apt-get update && apt-get install -y procps
+RUN apk update && apk add procps && apk add gcompat
 
-COPY ./SmartEdge-Temurin/commands.sh /home/commands.sh
+COPY ./SmartEdge-Native/commands.sh /home/commands.sh
 RUN chmod +x /home/commands.sh
 
-COPY --from=builder /app/sourceFiles/target/<Jar file to run> /home/<Jar file to run>
+COPY --from=builder /app/sourceFiles/target/<Native file to run> /home/<Native file to run>
+RUN chmod +x /home/chimera-camel-core
 
-ENTRYPOINT ["/bin/sh", "-c", "/home/commands.sh"]
+ENTRYPOINT ["/home/commands.sh"]
