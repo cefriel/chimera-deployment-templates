@@ -2,12 +2,12 @@ version: "3.8"
 
 services:
     chimera:
-        image: cefriel/smartedge:native
+        image: cefriel/minimal-chimera:graalvm-17
         build:
             context: ../
-            dockerfile: ./Dockerfile
+            dockerfile: ./GraalVM/Dockerfile
         volumes:
-              - ./appFolder:/home/appFolder
+#              - ./data:/home/data
               - ./outbox:/home/out
         environment:
               - TZ=Europe/Rome
