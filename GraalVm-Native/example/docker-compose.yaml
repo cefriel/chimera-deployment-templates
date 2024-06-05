@@ -1,11 +1,9 @@
-version: "3.8"
-
 services:
     chimera:
         image: cefriel/minimal-chimera:native
         build:
-            context: ../
-            dockerfile: ./GraalVm-Native/Dockerfile
+            context: ../../
+            dockerfile: ./GraalVm-Native/example/Dockerfile
         volumes:
 #              - ./data:/home/data
               - ./outbox:/home/out

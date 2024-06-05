@@ -11,7 +11,7 @@ WORKDIR /home
 
 RUN apt-get update && apt-get install -y procps
 
-COPY ./Temurin/commands.sh /home/commands.sh
+COPY ./Temurin/example/commands.sh /home/commands.sh
 RUN chmod +x /home/commands.sh
 
 COPY --from=builder /app/sourceFiles/target/minimal-chimera.jar /home/minimal-chimera.jar

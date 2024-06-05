@@ -1,11 +1,9 @@
-version: "3.8"
-
 services:
     chimera:
         image: cefriel/minimal-chimera:temurin-17
         build:
-            context: ../
-            dockerfile: ./Temurin/Dockerfile
+            context: ../../
+            dockerfile: ./Temurin/example/Dockerfile
         volumes:
 #              - ./data:/home/data
               - ./outbox:/home/out
