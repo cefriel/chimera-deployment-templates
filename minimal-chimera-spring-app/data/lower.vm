@@ -1,0 +1,17 @@
+#set ($prefixes = $reader.setQueryHeader("prefix ex: <http://example.org/>"))
+
+#set ($data = $reader.getDataframe(
+"SELECT *
+WHERE
+{ ?s ex:hasName       ?name       ;
+     ex:hasAge        ?age        ;
+     ex:hasOccupation ?occupation . }"))
+
+[
+#foreach ($x in $data)
+  { "name": "$x.name",
+    "age": $x.age,
+    "occupation": "$x.occupation"
+  }#if($foreach.hasNext),#end
+#end
+]

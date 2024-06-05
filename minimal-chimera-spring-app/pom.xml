@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>3.2.5</version>
+	</parent>
+	<groupId>com.cefriel.chimera.camel.spring</groupId>
+	<artifactId>minimal-chimera-spring</artifactId>
+	<version>0.0.2</version>
+	<name>minima-chimera-spring</name>
+	<description>Simple java camel pipeline which implemetns harmonization using chimera with spring</description>
+	
+	<properties>
+		<java.version>17</java.version>
+		<chimera.version>4.0.1</chimera.version>
+		<camel.springboot.version>4.4.1</camel.springboot.version>
+		<springframework.boot.version>3.2.5</springframework.boot.version>
+		<maven.compiler.source>17</maven.compiler.source>
+  		<maven.compiler.target>17</maven.compiler.target>
+	</properties> 
+	
+	<dependencyManagement>
+        <dependencies>
+            <!-- Camel BOM -->
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-bom</artifactId>
+                <version>${camel.springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+			<dependency>
+				<groupId>com.cefriel</groupId>
+				<artifactId>chimera</artifactId>
+				<version>${chimera.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>  		
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+		<!-- Spring Boot --> 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>		
+        <!-- Camel --> 
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-log-starter</artifactId>
+        </dependency>        
+        <!-- Chimera --> 
+	    <dependency>
+			<groupId>com.cefriel</groupId>
+			<artifactId>camel-chimera-graph</artifactId>
+			<exclusions>
+	            <exclusion>
+	                <groupId>org.eclipse.jetty</groupId>
+	                <artifactId>jetty-http</artifactId> 
+	            </exclusion>
+	        </exclusions>				
+	    </dependency>	
+	    <dependency>
+			<groupId>com.cefriel</groupId>
+			<artifactId>camel-chimera-mapping-template</artifactId>	
+	    </dependency>	  
+    </dependencies>
+
+	<!-- To build native image run the command: mvn clean package -Pnative -DskipTests -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                   <configuration>    
+		                <mainClass>com.cefriel.App</mainClass>
+		            </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>	
+	 <profiles>
+	    <profile>
+	        <id>native</id>
+	        <build>
+	            <plugins>
+	                <plugin>
+	                    <groupId>org.graalvm.buildtools</groupId>
+	                    <artifactId>native-maven-plugin</artifactId>
+	                    <executions>
+	                        <execution>
+	                            <id>build-native</id>
+	                            <goals>
+	                                <goal>compile-no-fork</goal>
+	                            </goals>
+	                            <phase>package</phase>
+	                        </execution>
+	                    </executions>
+	                </plugin>
+	            </plugins>
+	        </build>
+	    </profile>
+	</profiles>
+</project>
