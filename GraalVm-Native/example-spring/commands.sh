@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Wait a little bit to ensure volumes are mounted correctly
-sleep 3
+sleep 2
 
 #Run native app
 /home/minimal-chimera-spring &
