@@ -1,9 +1,9 @@
 services:
     chimera:
-        image: cefriel/minimal-chimera:temurin-17
+        image: cefriel/minimal-chimera-spring:temurin-17
         build:
             context: ../../
-            dockerfile: ./Temurin/example/Dockerfile
+            dockerfile: ./Temurin/example-spring/Dockerfile
         volumes:
 #              - ./data:/home/data
               - ./outbox:/home/out

@@ -12,7 +12,7 @@ WORKDIR /home
 
 RUN apk update && apk add procps && apk add gcompat
 
-COPY ./GraalVm-Native/commands.sh /home/commands.sh
+COPY ./GraalVm-Native/example/commands.sh /home/commands.sh
 RUN chmod +x /home/commands.sh
 
 COPY --from=builder /app/sourceFiles/target/native-minimal-chimera /home/native-minimal-chimera
