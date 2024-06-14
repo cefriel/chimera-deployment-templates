@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Wait a little bit to ensure volumes are mounted correctly
-sleep 3
+sleep 2
 
 # Start the Java application in the background
 java -Xmx1024m -jar /home/minimal-chimera-spring-0.0.2.jar &
