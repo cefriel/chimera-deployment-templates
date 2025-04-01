@@ -2,8 +2,8 @@
 	<modelVersion>4.0.0</modelVersion>
   
 	<groupId>com.cefriel</groupId>
-  	<artifactId>minimal-chimera-2</artifactId>
-  	<version>0.0.2</version>
+  	<artifactId>minimal-chimera-core</artifactId>
+  	<version>0.0.1</version>
   	<name>minima-chimera</name>
   	<description>Simple java camel pipeline which implemetns harmonization using chimera</description>
 
@@ -21,7 +21,7 @@
 	  		<dependency>
 			    <groupId>org.apache.camel</groupId>
 			    <artifactId>camel-bom</artifactId>
-			    <version>3.22.1</version>
+			    <version>4.4.1</version>
 			    <scope>import</scope>
 			    <type>pom</type>
 			</dependency>	
@@ -46,13 +46,31 @@
 			<groupId>org.apache.camel</groupId>
       		<artifactId>camel-main</artifactId>
     	</dependency>
- 
-		<!-- Enabling usage of camel http component-->
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-http</artifactId>
-		</dependency>  
+ 		
+		<!-- Enabling usage of camel micrometer-->
+    	<dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-micrometer-prometheus</artifactId>
+        </dependency> 
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-platform-http-main</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-console</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-management</artifactId>
+        </dependency>
 		
+	    <!--Required to use micrometer with camel main together with chimera. Must be placed before chimera dependency-->
+		<dependency>
+		    <groupId>io.netty</groupId>
+		    <artifactId>netty-codec</artifactId>
+		    <version>4.1.106.Final</version>
+		</dependency>	
 		
 		<!-- Enamble usage of chimera-->
 	    <dependency>
@@ -69,17 +87,35 @@
 		  <type>pom</type>
 		</dependency>
 		
+		<!-- Enabling usage of camel micrometer-->
+    	<dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-micrometer-prometheus</artifactId>
+        </dependency> 
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-platform-http-main</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-console</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-management</artifactId>
+        </dependency>
+        
+		
 		<!-- Enamble usage of camel log component-->
 		<dependency>
 		    <groupId>org.apache.camel</groupId>
 		    <artifactId>camel-log</artifactId>
-		</dependency>
-		<!--Add this dependency if you want to use the camel bom 4.x.x	
+		</dependency>		
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		    <version>2.0.12</version>
-		</dependency>-->			
+		</dependency>			
 	</dependencies>
 	
 	<build>

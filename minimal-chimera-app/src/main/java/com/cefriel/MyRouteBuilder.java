@@ -17,16 +17,21 @@ public class MyRouteBuilder extends RouteBuilder {
 		getContext().getRegistry().bind("loweringTemplate",
 				new ChimeraResourceBean("file://./data/lower.vm", "vtl"));
 
-	from("file:./data?fileName=input.csv&noop=true")
-            .log("Reading file: ${file:name}")
-            .convertBodyTo(String.class)
+		from("file:./data?fileName=input.csv&noop=true")
+	        .log("Reading file: ${file:name}")
+	        .convertBodyTo(String.class)
 			.log("File content: ${body}")
 			.log("Lifting...")
+			.to("micrometer:counter:num_executions?increment=1&tags=routeid=lifting")						
+			.to("micrometer:timer:processing_time?action=start&tags=routeid=lifting")
 			.to("mapt://csv?template=#bean:liftingTemplate&format=turtle")
-			.log("After lifting: ${body}")
+			.to("micrometer:timer:processing_time?action=stop&tags=routeid=lifting")
+			.log("After lifting: ${body}")			
 			.log("Lowering...")
+			.to("micrometer:timer:processing_time?action=start&tags=routeid=lowering")
 			.to("mapt://rdf?template=#bean:loweringTemplate")
-			.log("After lowering: ${body}");
+			.to("micrometer:timer:processing_time?action=stop&tags=routeid=lowering")
+			.log("After lowering: ${body}");	
 	
     }
 }

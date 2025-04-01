@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.cefriel.chimera.camel.spring</groupId>
 	<artifactId>minimal-chimera-spring</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.1</version>
 	<name>minimal-chimera-spring</name>
 	<description>Simple java camel pipeline which implemetns harmonization using chimera with spring</description>
 	
@@ -77,10 +77,24 @@
 	            </exclusion>
 	        </exclusions>				
 	    </dependency>	
-	    <dependency>
+	    <dependency>	
 			<groupId>com.cefriel</groupId>
 			<artifactId>camel-chimera-mapping-template</artifactId>	
-	    </dependency>	  
+	    </dependency>
+	   
+	    <!-- Others imports -->
+	    <dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		</dependency>
+	    <dependency>
+		  	<groupId>org.apache.camel.springboot</groupId>
+		  	<artifactId>camel-micrometer-starter</artifactId>		
+		</dependency>
+		<dependency>
+		    <groupId>io.micrometer</groupId>
+		    <artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>  
     </dependencies>
 
 	<!-- To build native image run the command: mvn clean package -Pnative -DskipTests -->
