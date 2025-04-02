@@ -18,6 +18,9 @@
   "name":"[J"
 },
 {
+  "name":"[Lcom.fasterxml.jackson.databind.ser.Serializers;"
+},
+{
   "name":"[Ljava.lang.String;"
 },
 {
@@ -25,15 +28,6 @@
 },
 {
   "name":"[Lorg.apache.logging.log4j.core.Appender;"
-},
-{
-  "name":"[Lorg.apache.logging.log4j.core.appender.rolling.TriggeringPolicy;"
-},
-{
-  "name":"[Lorg.apache.logging.log4j.core.appender.rolling.action.Action;"
-},
-{
-  "name":"[Lorg.apache.logging.log4j.core.appender.rolling.action.PathCondition;"
 },
 {
   "name":"[Lorg.apache.logging.log4j.core.config.AppenderRef;"
@@ -92,7 +86,14 @@
   "name":"com.fasterxml.jackson.databind.ObjectMapper"
 },
 {
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"com.fasterxml.jackson.dataformat.yaml.YAMLFactory"
+},
+{
+  "name":"com.ibm.lang.management.OperatingSystemMXBean"
 },
 {
   "name":"com.sun.management.GarbageCollectorMXBean",
@@ -107,12 +108,17 @@
   "queryAllPublicMethods":true
 },
 {
+  "name":"com.sun.management.OperatingSystemMXBean",
+  "methods":[{"name":"getCpuLoad","parameterTypes":[] }, {"name":"getProcessCpuLoad","parameterTypes":[] }]
+},
+{
   "name":"com.sun.management.ThreadMXBean",
   "queryAllPublicMethods":true
 },
 {
   "name":"com.sun.management.UnixOperatingSystemMXBean",
-  "queryAllPublicMethods":true
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getMaxFileDescriptorCount","parameterTypes":[] }, {"name":"getOpenFileDescriptorCount","parameterTypes":[] }]
 },
 {
   "name":"com.sun.management.VMOption",
@@ -133,6 +139,193 @@
 {
   "name":"com.sun.management.internal.OperatingSystemImpl",
   "queryAllPublicConstructors":true
+},
+{
+  "name":"io.micrometer.core.instrument.binder.jvm.JvmInfoMetrics",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.micrometer.core.instrument.binder.system.FileDescriptorMetrics",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.micrometer.core.instrument.binder.system.ProcessorMetrics",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.micrometer.core.instrument.distribution.TimeWindowMax",
+  "fields":[{"name":"rotating"}]
+},
+{
+  "name":"io.netty.bootstrap.ServerBootstrap$1"
+},
+{
+  "name":"io.netty.bootstrap.ServerBootstrap$ServerBootstrapAcceptor",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.buffer.AbstractByteBufAllocator",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"io.netty.buffer.AbstractReferenceCountedByteBuf",
+  "fields":[{"name":"refCnt"}]
+},
+{
+  "name":"io.netty.channel.AbstractChannelHandlerContext",
+  "fields":[{"name":"handlerState"}]
+},
+{
+  "name":"io.netty.channel.ChannelDuplexHandler",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.channel.ChannelHandlerAdapter",
+  "methods":[{"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.channel.ChannelInboundHandlerAdapter",
+  "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.channel.ChannelInitializer",
+  "methods":[{"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.channel.ChannelOutboundBuffer",
+  "fields":[{"name":"totalPendingSize"}, {"name":"unwritable"}]
+},
+{
+  "name":"io.netty.channel.ChannelOutboundHandlerAdapter",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }]
+},
+{
+  "name":"io.netty.channel.DefaultChannelConfig",
+  "fields":[{"name":"autoRead"}, {"name":"writeBufferWaterMark"}]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline",
+  "fields":[{"name":"estimatorHandle"}]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline$HeadContext",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline$TailContext",
+  "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.handler.codec.ByteToMessageDecoder",
+  "methods":[{"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }]
+},
+{
+  "name":"io.netty.handler.codec.haproxy.HAProxyMessageDecoder"
+},
+{
+  "name":"io.netty.handler.codec.http.HttpObjectDecoder",
+  "methods":[{"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.handler.codec.http.HttpObjectEncoder",
+  "methods":[{"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.util.DefaultAttributeMap",
+  "fields":[{"name":"attributes"}]
+},
+{
+  "name":"io.netty.util.Recycler$DefaultHandle",
+  "fields":[{"name":"state"}]
+},
+{
+  "name":"io.netty.util.ReferenceCountUtil",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"io.netty.util.concurrent.DefaultPromise",
+  "fields":[{"name":"result"}]
+},
+{
+  "name":"io.netty.util.concurrent.SingleThreadEventExecutor",
+  "fields":[{"name":"state"}, {"name":"threadProperties"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.vertx.core.eventbus.impl.EventBusImpl",
+  "fields":[{"name":"inboundInterceptors"}, {"name":"outboundInterceptors"}]
+},
+{
+  "name":"io.vertx.core.http.impl.Http1xOrH2CHandler",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.Http1xUpgradeToH2CHandler",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.HttpServerWorker$1",
+  "methods":[{"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.VertxHttpRequestDecoder"
+},
+{
+  "name":"io.vertx.core.http.impl.VertxHttpResponseEncoder"
+},
+{
+  "name":"io.vertx.core.logging.SLF4JLogDelegateFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.vertx.core.net.impl.ServerChannelLoadBalancer"
+},
+{
+  "name":"io.vertx.core.net.impl.VertxHandler",
+  "methods":[{"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.ext.web.impl.RoutingContextImplBase",
+  "fields":[{"name":"currentRouteNextFailureHandlerIndex"}, {"name":"currentRouteNextHandlerIndex"}]
+},
+{
+  "name":"jakarta.servlet.Servlet"
 },
 {
   "name":"java.io.ObjectInputStream",
@@ -197,6 +390,10 @@
   "queryAllPublicMethods":true
 },
 {
+  "name":"java.lang.ProcessHandle",
+  "methods":[{"name":"current","parameterTypes":[] }, {"name":"pid","parameterTypes":[] }]
+},
+{
   "name":"java.lang.Short",
   "fields":[{"name":"TYPE"}]
 },
@@ -241,6 +438,10 @@
   "queryAllPublicMethods":true
 },
 {
+  "name":"java.lang.management.ManagementFactory",
+  "methods":[{"name":"getRuntimeMXBean","parameterTypes":[] }]
+},
+{
   "name":"java.lang.management.ManagementPermission",
   "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
 },
@@ -271,7 +472,8 @@
 },
 {
   "name":"java.lang.management.RuntimeMXBean",
-  "queryAllPublicMethods":true
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getInputArguments","parameterTypes":[] }]
 },
 {
   "name":"java.lang.management.ThreadInfo",
@@ -286,6 +488,26 @@
 },
 {
   "name":"java.math.BigInteger"
+},
+{
+  "name":"java.nio.Bits",
+  "methods":[{"name":"unaligned","parameterTypes":[] }]
+},
+{
+  "name":"java.nio.Buffer",
+  "fields":[{"name":"address"}]
+},
+{
+  "name":"java.nio.ByteBuffer",
+  "methods":[{"name":"alignedSlice","parameterTypes":["int"] }]
+},
+{
+  "name":"java.nio.DirectByteBuffer",
+  "methods":[{"name":"<init>","parameterTypes":["long","int"] }]
+},
+{
+  "name":"java.nio.channels.spi.SelectorProvider",
+  "methods":[{"name":"openServerSocketChannel","parameterTypes":["java.net.ProtocolFamily"] }, {"name":"openSocketChannel","parameterTypes":["java.net.ProtocolFamily"] }]
 },
 {
   "name":"java.security.SecureRandomParameters"
@@ -313,6 +535,10 @@
   "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
 },
 {
+  "name":"java.util.concurrent.ForkJoinTask",
+  "fields":[{"name":"aux"}, {"name":"status"}]
+},
+{
   "name":"java.util.concurrent.atomic.AtomicBoolean",
   "fields":[{"name":"value"}]
 },
@@ -333,6 +559,11 @@
   "queryAllPublicMethods":true
 },
 {
+  "name":"javax.management.MBeanInfo",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getAttributes","parameterTypes":[] }, {"name":"getConstructors","parameterTypes":[] }, {"name":"getNotifications","parameterTypes":[] }, {"name":"getOperations","parameterTypes":[] }]
+},
+{
   "name":"javax.management.MBeanOperationInfo",
   "queryAllPublicMethods":true,
   "methods":[{"name":"getSignature","parameterTypes":[] }]
@@ -349,6 +580,16 @@
   "methods":[{"name":"cacheMBeanInfo","parameterTypes":["javax.management.MBeanInfo"] }, {"name":"getCachedMBeanInfo","parameterTypes":[] }, {"name":"getMBeanInfo","parameterTypes":[] }]
 },
 {
+  "name":"javax.management.modelmbean.ModelMBeanInfoSupport"
+},
+{
+  "name":"javax.management.modelmbean.ModelMBeanOperationInfo"
+},
+{
+  "name":"javax.management.modelmbean.RequiredModelMBean",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"javax.management.openmbean.CompositeData"
 },
 {
@@ -359,6 +600,10 @@
 },
 {
   "name":"javax.servlet.Servlet"
+},
+{
+  "name":"jdk.internal.misc.Unsafe",
+  "methods":[{"name":"getUnsafe","parameterTypes":[] }]
 },
 {
   "name":"jdk.management.jfr.ConfigurationInfo",
@@ -383,6 +628,158 @@
 },
 {
   "name":"jdk.management.jfr.SettingDescriptorInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.CamelContextAware",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.Service",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.ShutdownableService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.StatefulService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.StaticService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.SuspendableService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.TimerListener",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.ManagedAttribute",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.ManagedInstance",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.ManagedOperation",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedAsyncProcessorAwaitManagerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedBeanIntrospectionMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedBrowsableEndpointMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedCamelContextMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedCamelHealthMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedComponentMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedConsumerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedConvertBodyMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedCounterMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedEndpointMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedEndpointRegistryMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedExchangeFactoryManagerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedExtendedInformation",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedInflightRepositoryMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedLogMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedPerformanceCounterMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedProcessorMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedProducerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedRouteControllerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedRouteMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedSchedulePollConsumerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedSendProcessorMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedServiceMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedStreamCachingStrategyMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedSuspendableRouteMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedThreadPoolMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedTypeConverterRegistryMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.api.management.mbean.ManagedVariableRepositoryMBean",
   "queryAllPublicMethods":true
 },
 {
@@ -416,11 +813,104 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"org.apache.camel.component.http.HttpConvertersLoader",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"org.apache.camel.component.http.HttpEntityConverterLoader",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"org.apache.camel.component.micrometer.MicrometerComponent",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.MicrometerComponentConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.MicrometerConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.MicrometerEndpointConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.eventnotifier.MicrometerEventNotifierService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.micrometer.json.AbstractMicrometerService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.micrometer.messagehistory.MicrometerMessageHistoryMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.micrometer.messagehistory.MicrometerMessageHistoryService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.micrometer.prometheus.MicrometerPrometheus",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.prometheus.MicrometerPrometheusConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.micrometer.routepolicy.MicrometerRoutePolicyMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.micrometer.routepolicy.MicrometerRoutePolicyService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.component.platform.http.PlatformHttpComponent",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.PlatformHttpComponentConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.PlatformHttpConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.PlatformHttpEndpointConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.main.DefaultMainHttpServerFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.vertx.VertxConverterLoader",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.vertx.VertxPlatformHttpEngine",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.platform.http.vertx.VertxPlatformHttpServer",
+  "queryAllPublicMethods":true
+},
+{
   "name":"org.apache.camel.component.properties.PropertiesComponent",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.stub.StubConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.component.vertx.common.CamelVertxCommonBulkConverterLoader",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -440,11 +930,145 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"org.apache.camel.impl.DefaultCamelContext"
+  "name":"org.apache.camel.impl.CamelContextConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"org.apache.camel.impl.health.ComponentsHealthCheckRepository",
+  "name":"org.apache.camel.impl.DefaultCamelContext",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"org.apache.camel.impl.ExtendedCamelContextConfigurer",
   "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.BeanDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.BlockedConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.ConsumerDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.ContextDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.DebugDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.DefaultDevConsoleRegistry",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.EndpointDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.EventConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.GarbageCollectorDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.HealthDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.InflightConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.JavaSecurityDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.JvmDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.LogDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.MemoryDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.PropertiesDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.ReloadDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.RouteCircuitBreakerDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.RouteControllerConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.RouteDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.RouteDumpDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.SourceDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.StartupRecorderDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.ThreadDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.TopDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.TraceDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.TypeConverterConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.console.VariablesDevConsole",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.engine.AbstractCamelContext",
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"setDevConsole","parameterTypes":["java.lang.Boolean"] }]
+},
+{
+  "name":"org.apache.camel.impl.engine.DefaultManagementStrategy",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.impl.engine.DefaultReactiveExecutor",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.impl.engine.SimpleCamelContext",
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"org.apache.camel.impl.health.ConsumersHealthCheckRepository",
@@ -456,6 +1080,10 @@
 },
 {
   "name":"org.apache.camel.impl.health.DefaultHealthCheckRegistry",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.impl.health.ProducersHealthCheckRepository",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
@@ -475,6 +1103,143 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"org.apache.camel.main.HttpServerConfigurationPropertiesConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.main.MainConfigurationPropertiesConfigurer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.management.JmxManagementStrategy",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.JmxManagementStrategyFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.management.PerformanceCounter",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedAsyncProcessorAwaitManager",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedBeanIntrospection",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedBrowsableEndpoint",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedCamelContext",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedCamelHealth",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedComponent",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedConsumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedConvertBody",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedCounter",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedEndpoint",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedEndpointRegistry",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedEventNotifier",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"getNotificationInfo","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedEventNotifierMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedExchangeFactoryManager",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedInflightRepository",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedLog",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedPerformanceCounter",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedProcessor",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedProducer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedRoute",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedRouteController",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedScheduledPollConsumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedSendProcessor",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedStreamCachingStrategy",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedSuspendableRoute",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedThreadPool",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedTypeConverterRegistry",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.management.mbean.ManagedVariableRepository",
+  "queryAllPublicMethods":true
+},
+{
   "name":"org.apache.camel.processor.DefaultInternalProcessorFactory",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -483,16 +1248,42 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"org.apache.camel.spi.CamelMetricsService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.spi.HasCamelContext",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.spi.IdempotentRepository",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.spi.ManagementStrategy",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apache.camel.spi.ReactiveExecutor",
+  "queryAllPublicMethods":true
+},
+{
   "name":"org.apache.camel.support.DefaultEndpoint",
   "queryAllDeclaredMethods":true
 },
 {
+  "name":"org.apache.camel.support.processor.idempotent.MemoryIdempotentRepository",
+  "queryAllPublicMethods":true
+},
+{
   "name":"org.apache.camel.support.service.BaseService",
-  "queryAllDeclaredMethods":true
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
 },
 {
   "name":"org.apache.camel.support.service.ServiceSupport",
-  "queryAllDeclaredMethods":true
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
 },
 {
   "name":"org.apache.logging.log4j.core.appender.AbstractAppender$Builder",
@@ -545,13 +1336,7 @@
   "name":"org.apache.logging.log4j.core.appender.RandomAccessFileAppender"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.RollingFileAppender",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"newBuilder","parameterTypes":[] }]
-},
-{
-  "name":"org.apache.logging.log4j.core.appender.RollingFileAppender$Builder",
-  "allDeclaredFields":true
+  "name":"org.apache.logging.log4j.core.appender.RollingFileAppender"
 },
 {
   "name":"org.apache.logging.log4j.core.appender.RollingRandomAccessFileAppender"
@@ -614,21 +1399,13 @@
   "name":"org.apache.logging.log4j.core.appender.rewrite.RewriteAppender"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.CompositeTriggeringPolicy",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"createPolicy","parameterTypes":["org.apache.logging.log4j.core.appender.rolling.TriggeringPolicy[]"] }]
+  "name":"org.apache.logging.log4j.core.appender.rolling.CompositeTriggeringPolicy"
 },
 {
   "name":"org.apache.logging.log4j.core.appender.rolling.CronTriggeringPolicy"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"newBuilder","parameterTypes":[] }]
-},
-{
-  "name":"org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy$Builder",
-  "allDeclaredFields":true
+  "name":"org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy"
 },
 {
   "name":"org.apache.logging.log4j.core.appender.rolling.DirectWriteRolloverStrategy"
@@ -640,25 +1417,13 @@
   "name":"org.apache.logging.log4j.core.appender.rolling.OnStartupTriggeringPolicy"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.RollingFileManager",
-  "fields":[{"name":"patternProcessor"}, {"name":"rolloverStrategy"}, {"name":"triggeringPolicy"}]
-},
-{
   "name":"org.apache.logging.log4j.core.appender.rolling.SizeBasedTriggeringPolicy"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.TimeBasedTriggeringPolicy",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"newBuilder","parameterTypes":[] }]
+  "name":"org.apache.logging.log4j.core.appender.rolling.TimeBasedTriggeringPolicy"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.TimeBasedTriggeringPolicy$Builder",
-  "allDeclaredFields":true
-},
-{
-  "name":"org.apache.logging.log4j.core.appender.rolling.action.DeleteAction",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"createDeleteAction","parameterTypes":["java.lang.String","boolean","int","boolean","org.apache.logging.log4j.core.appender.rolling.action.PathSorter","org.apache.logging.log4j.core.appender.rolling.action.PathCondition[]","org.apache.logging.log4j.core.appender.rolling.action.ScriptCondition","org.apache.logging.log4j.core.config.Configuration"] }]
+  "name":"org.apache.logging.log4j.core.appender.rolling.action.DeleteAction"
 },
 {
   "name":"org.apache.logging.log4j.core.appender.rolling.action.IfAccumulatedFileCount"
@@ -676,9 +1441,7 @@
   "name":"org.apache.logging.log4j.core.appender.rolling.action.IfFileName"
 },
 {
-  "name":"org.apache.logging.log4j.core.appender.rolling.action.IfLastModified",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"createAgeCondition","parameterTypes":["org.apache.logging.log4j.core.appender.rolling.action.Duration","org.apache.logging.log4j.core.appender.rolling.action.PathCondition[]"] }]
+  "name":"org.apache.logging.log4j.core.appender.rolling.action.IfLastModified"
 },
 {
   "name":"org.apache.logging.log4j.core.appender.rolling.action.IfNot"
@@ -1178,9 +1941,7 @@
   "name":"org.apache.logging.log4j.core.pattern.ExtendedThrowablePatternConverter"
 },
 {
-  "name":"org.apache.logging.log4j.core.pattern.FileDatePatternConverter",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"newInstance","parameterTypes":["java.lang.String[]"] }]
+  "name":"org.apache.logging.log4j.core.pattern.FileDatePatternConverter"
 },
 {
   "name":"org.apache.logging.log4j.core.pattern.FileLocationPatternConverter"
@@ -1448,6 +2209,18 @@
 {
   "name":"sun.management.RuntimeImpl",
   "queryAllPublicConstructors":true
+},
+{
+  "name":"sun.misc.Unsafe",
+  "fields":[{"name":"theUnsafe"}],
+  "methods":[{"name":"copyMemory","parameterTypes":["java.lang.Object","long","java.lang.Object","long","long"] }, {"name":"getAndAddLong","parameterTypes":["java.lang.Object","long","long"] }, {"name":"getAndSetObject","parameterTypes":["java.lang.Object","long","java.lang.Object"] }, {"name":"invokeCleaner","parameterTypes":["java.nio.ByteBuffer"] }, {"name":"storeFence","parameterTypes":[] }]
+},
+{
+  "name":"sun.misc.VM"
+},
+{
+  "name":"sun.nio.ch.SelectorImpl",
+  "fields":[{"name":"publicSelectedKeys"}, {"name":"selectedKeys"}]
 },
 {
   "name":"sun.reflect.Reflection"
