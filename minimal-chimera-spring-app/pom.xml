@@ -9,7 +9,7 @@
 	<groupId>com.cefriel.chimera.camel.spring</groupId>
 	<artifactId>minimal-chimera-spring</artifactId>
 	<version>0.0.2</version>
-	<name>minima-chimera-spring</name>
+	<name>minimal-chimera-spring</name>
 	<description>Simple java camel pipeline which implemetns harmonization using chimera with spring</description>
 	
 	<properties>
