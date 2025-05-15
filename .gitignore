@@ -1,3 +1,6 @@
 minimal-chimera-app/target/*
 evaluation/report/report.xlsx
 /GraalVM/example/outbox
+/minimal-chimera-app/*.classpath
+/minimal-chimera-app/*.project
+/minimal-chimera-app/.settings/*.prefs

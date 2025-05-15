@@ -5,6 +5,8 @@
   }, {
     "pattern":"\\QMETA-INF/maven/org.apache.camel/camel-main/pom.properties\\E"
   }, {
+    "pattern":"\\QMETA-INF/micrometer-binder-index.dat\\E"
+  }, {
     "pattern":"\\QMETA-INF/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat\\E"
   }, {
     "pattern":"\\QMETA-INF/services/javax.xml.datatype.DatatypeFactory\\E"
@@ -33,19 +35,105 @@
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/component/mapt\\E"
   }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/component/micrometer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/component/platform-http\\E"
+  }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/file-component\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/file-endpoint\\E"
   }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/micrometer-component\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/micrometer-endpoint\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.CamelContext\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.ExtendedCamelContext\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.component.micrometer.prometheus.MicrometerPrometheus\\E"
+  }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.main.HealthConfigurationProperties\\E"
   }, {
-    "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/components-repository\\E"
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.main.HttpServerConfigurationProperties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/org.apache.camel.main.MainConfigurationProperties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/platform-http-component\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/configurer/platform-http-endpoint\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/bean\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/blocked\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/consumer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/context\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/debug\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/default-registry\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/endpoint\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/event\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/gc\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/health\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/inflight\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/java-security\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/jvm\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/log\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/memory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/micrometer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/platform-http\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/reload\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/route-circuit-breaker\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/route-controller\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/route-dump\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/route\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/source\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/startup-recorder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/stub\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/thread\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/top\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/trace\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/type-converters\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/dev-console/variables\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/consumers-repository\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/context-check\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/default-registry\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/producers-repository\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/health-check/routes-repository\\E"
   }, {
@@ -55,9 +143,19 @@
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/language/simple\\E"
   }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/management/ManagementStrategyFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/micrometer-prometheus\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/platform-http-engine\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org/apache/camel/platform-http-server\\E"
+  }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/processor-factory\\E"
   }, {
     "pattern":"\\QMETA-INF/services/org/apache/camel/properties-component-factory\\E"
+  }, {
+    "pattern":"\\Qapplication.properties\\E"
   }, {
     "pattern":"\\Qlog4j2.properties\\E"
   }, {

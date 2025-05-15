@@ -14,7 +14,7 @@ RUN microdnf install -y procps
 COPY ./GraalVM/example-spring/commands.sh /home/commands.sh
 RUN chmod +x /home/commands.sh
 
-COPY --from=builder /app/sourceFiles/target/minimal-chimera-spring-0.0.2.jar /home/minimal-chimera-spring-0.0.2.jar
+COPY --from=builder /app/sourceFiles/target/minimal-chimera-spring-0.0.1.jar /home/minimal-chimera-spring-0.0.1.jar
 COPY --from=builder /app/sourceFiles/data /home/data
 
 ENTRYPOINT ["/bin/sh", "-c", "/home/commands.sh"]
