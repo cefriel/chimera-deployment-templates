@@ -1,0 +1,9 @@
+PREFIX ex: <http://example.org/>
+#set ($rows = $reader.getDataframe())
+
+#foreach($row in $rows)
+  ex:$foreach.count
+    ex:hasName "$row.name" ;
+    ex:hasAge $row.age ;
+    ex:hasOccupation "$row.occupation" .
+#end
