@@ -7,3 +7,6 @@ The different deployment options are:
 - [GraalVM](./GraalVM/): Chimera application built using the [GraalVM JVM](https://www.graalvm.org/) in two versions: [camel-core](./GraalVM/example) and [camel-spring](./GraalVM/example-spring) and deployed as JARs. A third example is built using the [Quarkus](https://quarkus.io/) framework and then run on the GraalVM JVM.
 - [GraalVM Native](./GraalVM-Native/): Chimera application built using [GraalVM](https://www.graalvm.org/) in two versions: [camel-core](./GraalVM-Native/example) and [camel-spring](./GraalVM-Native/example-spring) and deployed as a native executable
 - [Kubernetes](./Kubernetes/): Chimera application deployed using [kubernetes](https://kubernetes.io/).
+
+The [minimal-chimera-observable-micrometer](./minimal-chimera-observable-micrometer/) DataOps pipeline demonstrates how a pipeline deployed as a JAR using the [Temurin](./Temurin/) deployment template can be enhanced with [Micrometer](https://micrometer.io/) to enable observability and expose valuable execution metrics.
+
