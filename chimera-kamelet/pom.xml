@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>chimera-kamelet-test</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <chimera.version>4.3.0</chimera.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>		
+      <!-- Camel BOM -->
+      <dependency>
+	<groupId>org.apache.camel</groupId>
+	<artifactId>camel-bom</artifactId>
+	<version>4.4.1</version>
+	<scope>import</scope>
+	<type>pom</type>
+      </dependency>	
+      <dependency>
+	<groupId>com.cefriel</groupId>
+	<artifactId>chimera</artifactId>
+	<version>${chimera.version}</version>
+	<scope>import</scope>
+	<type>pom</type>
+      </dependency>  
+    </dependencies>	
+  </dependencyManagement>
+
+  <dependencies>
+    <!--Add base library of camel framework-->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+    </dependency>
+    <!-- Enabling usage of camel-main to bootstrap camel -->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-main</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-yaml-dsl</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.cefriel</groupId>
+      <artifactId>camel-chimera-graph</artifactId>			
+    </dependency>	
+    <dependency>
+      <groupId>com.cefriel</groupId>
+      <artifactId>camel-chimera-mapping-template</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.rdf4j</groupId>
+      <artifactId>rdf4j-storage</artifactId>			
+      <type>pom</type>
+    </dependency>	   
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-log</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-kamelet</artifactId>
+    </dependency>
+    
+    <!-- Enable debugging features-->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-debug</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.12</version>
+    </dependency>	
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>4.0.4</version>
+      <scope>runtime</scope>
+    </dependency>			
+  </dependencies>
+
+</project>
