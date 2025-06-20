@@ -9,3 +9,5 @@ The different deployment options are:
 - [Kubernetes](./Kubernetes/): Chimera application deployed using [kubernetes](https://kubernetes.io/).
 
 The [chimera-kamelet](./chimera-kamelet/) project demonstrates how a Kamelet that wraps Chimera functionality can be deployed as a step within a DataOps pipeline.
+
+The [minimal-chimera-observable-micrometer](./minimal-chimera-observable-micrometer/) DataOps pipeline demonstrates how a pipeline deployed as a JAR using the [Temurin](./Temurin/) deployment template can be enhanced with [Micrometer](https://micrometer.io/) to enable observability and expose valuable execution metrics.
