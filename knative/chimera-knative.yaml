@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: <chimera-example>
+spec:
+  template:
+    spec:
+      containers:
+        - image: <chimera-docker-image>
+          ports:
+            - containerPort: <chimera-exposed-port>
+
