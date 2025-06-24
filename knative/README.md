@@ -8,6 +8,8 @@ Chimera routes provided as Docker images can be deployed to a Kubernetes environ
 
 An example Knative Service configuration is included in this repository [](./chimera-knative.yaml)
 
+Apache Camel can leverage Knative through the [Camel Knative component](https://camel.apache.org/components/next/knative-component.html) to make Knative aware Chimera pipelines to call and expose services within a Kubernetes cluster. Single routes that use the Knative component can be automatically autoscaled based on demand.
+
 ## What is a Knative Service?
 
 A **Knative Service** is a high-level abstraction that enables developers to deploy and manage stateless containers with minimal configuration. When you deploy a Knative Service:
@@ -21,7 +23,7 @@ To deploy the Chimera route as a Knative Service, follow the steps below.
 
 ### Prerequisites
 
-- Access to a Kubernetes cluster with Knative Serving installed and properly configured.
+- Access to a Kubernetes cluster with [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-the-knative-serving-component) installed and properly configured.
 - `kubectl` configured to access your cluster.
 - A Docker image of the Chimera route
 
