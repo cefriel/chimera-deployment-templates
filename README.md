@@ -11,3 +11,9 @@ The different deployment options are:
 The [chimera-kamelet](./chimera-kamelet/) project demonstrates how a Kamelet that wraps Chimera functionality can be deployed as a step within a DataOps pipeline.
 
 The [minimal-chimera-observable-micrometer](./minimal-chimera-observable-micrometer/) DataOps pipeline demonstrates how a pipeline deployed as a JAR using the [Temurin](./Temurin/) deployment template can be enhanced with [Micrometer](https://micrometer.io/) to enable observability and expose valuable execution metrics.
+
+## Contributing
+
+Before contributing, please read carefully, complete and sign our [Contributor Licence Agreement](https://github.com/cefriel/contributing/blob/main/contributor-license-agreement.pdf). 
+
+When contributing to this repository, please first discuss the change you wish to make via issue or any other available method with the repository's owners.
