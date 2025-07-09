@@ -15,8 +15,7 @@ The different deployment options are:
 - [Temurin](./Temurin/): Build Chimera pipeline using the [OpenJDK](https://openjdk.org/) JVM and deploy within a container.
 - [GraalVM](./GraalVM/): Build Chimera pipeline using the [GraalVM](https://www.graalvm.org/) JVM and deploy within a container.
 - [GraalVM Native](./GraalVM-Native/): Build Chimera pipeline using [GraalVM](https://www.graalvm.org/) JVM as native executable and deploy within a container not requiring the JVM.
-- [Kubernetes](./Kubernetes/): Example manifest files for deployment on [Kubernetes](https://kubernetes.io/).
-- [Knative](./Knative/): Example files for deployment on Kubernetes using [Knative](https://knative.dev/).
+- [Kubernetes](./Kubernetes/): Manifest files for deployment on [Kubernetes](https://kubernetes.io/) as a Service and instructions for deployment using [Knative](https://knative.dev/).
 
 ## Contributing
 
