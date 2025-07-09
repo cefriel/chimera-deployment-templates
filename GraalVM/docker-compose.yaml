@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     chimera:
-        image: cefriel/smartedge:native
+        image: cefriel/chimera-deployment-templates:graalvm
         build:
             context: ../
             dockerfile: ./Dockerfile

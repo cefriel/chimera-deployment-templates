@@ -4,7 +4,7 @@ WORKDIR /
 COPY ./minimal-chimera-spring-app /app/sourceFiles
 
 WORKDIR /app/sourceFiles
-RUN mvn package -Pnative -DskipTests
+RUN mvn -Pnative -Dagent=false -DskipTests package
 
 FROM alpine:latest
 

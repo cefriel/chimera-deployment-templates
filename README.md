@@ -1,16 +1,22 @@
 # Chimera Deployment Templates
 
-This repository contains examples of how a chimera pipeline using [Apache Camel](https://camel.apache.org/) can be deployed in several ways.
+This repository contains templates to deploy using different approaches offered by [Apache Camel](https://camel.apache.org/) and covering various requirements for cloud and edge environments.
+
+The deployment templates are parametric and practical Chimera pipelines are defined as examples to demonstrate their usage (`chimera-pipelines`) folder.
+
+The folder `chimera-pipelines` contains the following pipelines:
+- [minimal-chimera-app](./chimera-pipelines/minimal-chimera-app/): A minimal Chimera pipeline built with Apache Camel Core, demonstrating basic transformation capabilities.
+- [minimal-chimera-spring-app](./chimera-pipelines/minimal-chimera-spring-app/): A minimal Chimera pipeline built with the [Spring Boot](https://spring.io/projects/spring-boot) framework.
+- [minimal-chimera-quarkus-app](./chimera-pipelines/minimal-chimera-quarkus-app/): A minimal Chimera pipeline built using the [Quarkus](https://quarkus.io/) framework.
+- [minimal-chimera-observable-micrometer](./chimera-pipelines/minimal-chimera-observable-micrometer/): A Chimera pipeline enhanced with [Micrometer](https://micrometer.io/) observability features to expose execution metrics.
+- [minimal-chimera-kamelet](./chimera-pipelines/minimal-chimera-kamelet/): A basic Kamelet implementation that wraps Chimera components for reuse in other pipelines.
+
 The different deployment options are:
-
-- [Temurin](./Temurin/): Chimera application built using [OpenJDK](https://openjdk.org/) JVM in two versions: [camel-core](./Temurin/example) and [camel-spring](./Temurin/example-spring) and deployed as a Jar
-- [GraalVM](./GraalVM/): Chimera application built using the [GraalVM JVM](https://www.graalvm.org/) in two versions: [camel-core](./GraalVM/example) and [camel-spring](./GraalVM/example-spring) and deployed as JARs. A third example is built using the [Quarkus](https://quarkus.io/) framework and then run on the GraalVM JVM.
-- [GraalVM Native](./GraalVM-Native/): Chimera application built using [GraalVM](https://www.graalvm.org/) in two versions: [camel-core](./GraalVM-Native/example) and [camel-spring](./GraalVM-Native/example-spring) and deployed as a native executable
-- [Kubernetes](./Kubernetes/): Chimera application deployed using [kubernetes](https://kubernetes.io/).
-
-The [chimera-kamelet](./chimera-kamelet/) project demonstrates how a Kamelet that wraps Chimera functionality can be deployed as a step within a DataOps pipeline.
-
-The [minimal-chimera-observable-micrometer](./minimal-chimera-observable-micrometer/) DataOps pipeline demonstrates how a pipeline deployed as a JAR using the [Temurin](./Temurin/) deployment template can be enhanced with [Micrometer](https://micrometer.io/) to enable observability and expose valuable execution metrics.
+- [Temurin](./Temurin/): Build Chimera pipeline using the [OpenJDK](https://openjdk.org/) JVM and deploy within a container.
+- [GraalVM](./GraalVM/): Build Chimera pipeline using the [GraalVM](https://www.graalvm.org/) JVM and deploy within a container.
+- [GraalVM Native](./GraalVM-Native/): Build Chimera pipeline using [GraalVM](https://www.graalvm.org/) JVM as native executable and deploy within a container not requiring the JVM.
+- [Kubernetes](./Kubernetes/): Example manifest files for deployment on [Kubernetes](https://kubernetes.io/).
+- [Knative](./Knative/): Example files for deployment on Kubernetes using [Knative](https://knative.dev/).
 
 ## Contributing
 

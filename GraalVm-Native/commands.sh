@@ -4,7 +4,7 @@
 sleep 3
 
 #Run native app
-/home/chimera-camel-core &
+/home/chimera-camel-core & # Add -XX:MaxHeapSize=256m to limit the heap size
 
 # Log header to CSV file
 echo "Timestamp,MemoryUsage(MB),CPUUsage" > /home/out/stats.txt

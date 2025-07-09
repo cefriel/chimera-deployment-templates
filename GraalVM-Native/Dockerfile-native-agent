@@ -1,0 +1,8 @@
+FROM cefriel/native-builder:v17 AS builder
+
+WORKDIR /
+COPY ./ /app/sourceFiles
+
+WORKDIR /app/sourceFiles
+
+ENTRYPOINT ["bash", "-c", "timeout 120s mvn -Pnative -Dagent=true -DskipTests -DskipNativeBuild=true package exec:exec@java-agent ; tail -f /dev/null"]
