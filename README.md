@@ -17,6 +17,10 @@ The different deployment options are:
 - [GraalVM Native](./GraalVM-Native/): Build Chimera pipeline using [GraalVM](https://www.graalvm.org/) JVM as native executable and deploy within a container not requiring the JVM.
 - [Kubernetes](./Kubernetes/): Manifest files for deployment on [Kubernetes](https://kubernetes.io/) as a Service and instructions for deployment using [Knative](https://knative.dev/).
 
+### Acknowledgements
+
+The development of Chimera deployment templates has been partially supported by the European Commission through the SmartEdge project (Grant Agreement 101092908).
+
 ## Contributing
 
 Before contributing, please read carefully, complete and sign our [Contributor Licence Agreement](https://github.com/cefriel/contributing/blob/main/contributor-license-agreement.pdf). 
